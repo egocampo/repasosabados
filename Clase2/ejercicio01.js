@@ -14,39 +14,40 @@ hasta 100= buen ritmo
 hasta 120= ahi de la ley
 mas = eso no se hace
 */
+function mostrar(){
+	var distanciaDelViaje;
+	var tiempoDelViajeHoras;
+	var tiempoDelViajeMinutos;
+	var tiempoDelViajeTotal;
+	var velocidadDelViaje;
+	var mensaje;
 
-var distanciaDelViaje;
-var tiempoDelViajeHoras;
-var tiempoDelViajeMinutos;
-var tiempoDelViajeTotal;
-var velocidadDelViaje;
-var mensaje;
+	distanciaDelViaje=prompt("Ingrese distancia del viaje realizado en KILOMETROS");
+	tiempoDelViajeHoras=prompt("Ingrese el tiempo que tardó en realizar el viaje, valor HORAS", "2");
+	tiempoDelViajeMinutos=prompt("Ingrese el tiempo que tardó en realizar el viaje, valor MINUTOS","30");
 
-distanciaDelViaje=prompt("Ingrese distancia del viaje realizado en KILOMETROS");
-tiempoDelViajeHoras=prompt("Ingrese el tiempo que tardó en realizar el viaje, valor HORAS", "2");
-tiempoDelViajeMinutos=prompt("Ingrese el tiempo que tardó en realizar el viaje, valor MINUTOS","30");
+	distanciaDelViaje=parseInt(distanciaDelViaje);
+	tiempoDelViajeHoras=parseInt(tiempoDelViajeHoras);
+	tiempoDelViajeMinutos=parseInt(tiempoDelViajeMinutos);
 
-distanciaDelViaje=parseInt(distanciaDelViaje);
-tiempoDelViajeHoras=parseInt(tiempoDelViajeHoras);
-tiempoDelViajeMinutos=parseInt(tiempoDelViajeMinutos);
+	tiempoDelViajeTotal=tiempoDelViajeHoras+(tiempoDelViajeMinutos/60);
+	velocidadDelViaje=distanciaDelViaje/tiempoDelViajeTotal;
 
-tiempoDelViajeTotal=tiempoDelViajeHoras+(tiempoDelViajeMinutos/60);
-velocidadDelViaje=distanciaDelViaje/tiempoDelViajeTotal;
+	if(velocidadDelViaje<61){
+		mensaje="muy lento";
+	}
+	else if(velocidadDelViaje<81){
+		mensaje="lento";
+	}
+	else if(velocidadDelViaje<101){
+		mensaje="buen ritmo";
+	}
+	else if(velocidadDelViaje<121){
+		mensaje="ahi de la ley";
+	}
+	else{
+		mensaje="eso no se hace";
+	}
 
-if(velocidadDelViaje<61){
-	mensaje="muy lento";
+	alert(mensaje);
 }
-else if(velocidadDelViaje<81){
-	mensaje="lento";
-}
-else if(velocidadDelViaje<101){
-	mensaje="buen ritmo";
-}
-else if(velocidadDelViaje<121){
-	mensaje="ahi de la ley";
-}
-else{
-	mensaje="eso no se hace";
-}
-
-alert(mensaje);
