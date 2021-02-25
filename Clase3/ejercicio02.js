@@ -23,6 +23,14 @@ while(continuar=="s")
  	}
  	continuar=prompt("Desea ingresar otro número, presione \"s\"");
 }
-promedio=acumulador/contadorCondicional;
+
+if(contadorCondicional!=0)
+{
+	promedio=acumulador/contadorCondicional;
+}
+else
+{
+	promedio=0;
+}
 alert("La cantidad de numeros entre 10 y 20 inclusive son: "+contadorCondicional);
 alert("El promedio de valores de los números entre 10 y 20 inclusive son: "+promedio);
